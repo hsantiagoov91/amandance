@@ -1,374 +1,162 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amanda Dance Project | The Woodlands, TX</title>
-  <meta name="description" content="A choreography-based dance class for women in The Woodlands. Learn combos, build coordination and musicality, and reset your week with a strong community. No experience needed." />
-  <style>
-    :root{
-      --bg:#0b0b10;
-      --card:#12121a;
-      --text:#f5f5f7;
-      --muted:#b7b7c2;
-      --line:rgba(255,255,255,.10);
-      --accent:#ff3ea5;
-      --accent2:#7c5cff;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(255,62,165,.25), transparent 55%),
-                  radial-gradient(900px 500px at 90% 10%, rgba(124,92,255,.25), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.45;
-    }
-    a{color:inherit}
-    .wrap{max-width:1100px;margin:0 auto;padding:24px}
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:12px 0;
-    }
-    .brand{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.2px}
-    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
-    .nav a{opacity:.9;text-decoration:none}
-    .navlinks{display:flex;gap:18px;align-items:center}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:12px 16px;border-radius:12px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.06);
-      text-decoration:none;
-      font-weight:650;
-    }
-    .btn.primary{
-      border:none;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#fff;
-    }
-    .hero{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:28px;
-      padding:36px 0 18px 0;
-      align-items:stretch;
-    }
-    @media (max-width: 920px){
-      .hero{grid-template-columns:1fr}
-      .navlinks{display:none}
-    }
-    .kicker{
-      display:inline-flex;gap:10px;align-items:center;
-      padding:8px 12px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.05);
-      color:var(--muted);
-      width:max-content;
-      font-size:14px;
-    }
-    h1{margin:12px 0 10px 0;font-size:44px;line-height:1.05;letter-spacing:-.6px}
-    @media (max-width: 520px){h1{font-size:36px}}
-    .sub{color:var(--muted);font-size:18px;max-width:60ch}
-    .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .fine{color:rgba(255,255,255,.60);font-size:13px;margin-top:10px}
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:18px;
-      padding:18px;
-      height:100%;
-    }
-    .stack{display:grid;gap:12px}
-    .pillrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .pill{
-      padding:8px 10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      color:rgba(255,255,255,.78);
-      font-size:13px;
-      background:rgba(255,255,255,.04);
-    }
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
-    @media (max-width: 920px){.grid3{grid-template-columns:1fr}}
-    h2{font-size:22px;margin:0 0 10px 0}
-    .muted{color:var(--muted)}
-    .list{margin:10px 0 0 0;padding:0;list-style:none;display:grid;gap:10px}
-    .li{display:flex;gap:10px}
-    .check{
-      width:18px;height:18px;border-radius:6px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.14);
-      display:flex;align-items:center;justify-content:center;
-      flex:0 0 18px;
-      margin-top:2px;
-    }
-    .section{padding:22px 0;border-top:1px solid var(--line)}
-    .two{
-      display:grid;grid-template-columns:1fr 1fr;gap:14px;
-    }
-    @media (max-width: 920px){.two{grid-template-columns:1fr}}
-    .price{
-      display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
-      padding:16px;border-radius:16px;border:1px solid rgba(255,255,255,.12);
-      background:rgba(0,0,0,.20);
-    }
-    .big{font-size:28px;font-weight:800;letter-spacing:-.4px}
-    .small{font-size:13px;color:rgba(255,255,255,.65)}
-    .footer{padding:22px 0;color:rgba(255,255,255,.65);font-size:13px}
-    .faq details{border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:12px 14px;background:rgba(255,255,255,.03)}
-    .faq{display:grid;gap:10px}
-    summary{cursor:pointer;font-weight:650}
-    .tag{
-      display:inline-flex;gap:8px;align-items:center;font-size:13px;color:rgba(255,255,255,.72)
-    }
-    .glow{
-      position:relative;
-      overflow:hidden;
-    }
-    .glow:before{
-      content:"";
-      position:absolute;inset:-1px;
-      background:radial-gradient(700px 260px at 20% 20%, rgba(255,62,165,.35), transparent 60%),
-                 radial-gradient(600px 240px at 90% 10%, rgba(124,92,255,.35), transparent 60%);
-      opacity:.55;
-      pointer-events:none;
-    }
-    .glow > *{position:relative}
-    .input{
-      width:100%;padding:12px 12px;border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(0,0,0,.25);
-      color:var(--text);
-      outline:none;
-    }
-    .formrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    @media (max-width: 920px){.formrow{grid-template-columns:1fr}}
-    .note{font-size:12px;color:rgba(255,255,255,.60)}
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-    <header class="nav">
-      <div class="brand">
-        <span class="dot"></span>
-        <span>Amanda Dance Project</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amanda Dance Project | Choreography Classes for Women in The Woodlands, TX</title>
+    <meta name="description" content="Choreography-based dance classes for women in The Woodlands and Creekside. Build coordination, agility, and musicality in a zero-pressure community." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Amanda Dance Project" />
+    <meta property="og:description" content="Girl therapy, but make it choreography." />
+    <meta property="og:url" content="https://amandance.com/" />
+    <meta property="og:image" content="https://amandance.com/Logo.jpeg" />
+    <link rel="canonical" href="https://amandance.com/" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Amanda Dance Project",
+            "url": "https://amandance.com/",
+            "image": "https://amandance.com/Logo.jpeg",
+            "telephone": "+1-915-314-8638",
+            "email": "amandance.studio@gmail.com",
+            "address": {"@type": "PostalAddress", "addressLocality": "The Woodlands", "addressRegion": "TX", "addressCountry": "US"},
+            "areaServed": ["The Woodlands, TX", "Creekside, TX"]
+          },
+          {
+            "@type": "Event",
+            "name": "Amanda Dance Project Weekly Choreography Class",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "offers": [{"@type": "Offer", "price": "20", "priceCurrency": "USD"}, {"@type": "Offer", "price": "75", "priceCurrency": "USD", "name": "4 Class Package"}]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="/" class="brand">
+          <img src="Logo.jpeg" alt="Amanda Dance Project logo" class="brand-logo" />
+          <span>AMANDA DANCE PROJECT</span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a data-link="reserve" class="btn btn-primary" href="#">Reserve Spot</a>
+          <a href="pages/pricing.html">Pricing</a>
+          <a href="pages/schedule.html">Schedule</a>
+          <a data-link="instagram" href="#">Follow Instagram</a>
+        </nav>
       </div>
-      <nav class="navlinks">
-        <a href="#what">What it is</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn" href="#join">Join</a>
-      </nav>
-      <a class="btn primary" href="#join">Book your spot</a>
     </header>
 
     <main>
-      <section class="hero">
-        <div>
-          <div class="kicker">
-            <span class="dot"></span>
-            <span>The Woodlands, TX • Women’s dance class • No experience needed</span>
-          </div>
-
-          <h1>Girl therapy, but make it choreography.</h1>
-
-          <p class="sub">
-            Amanda Dance Project is a weekly class where you learn real combos, build coordination and musicality,
-            and leave lighter. Zero pressure. Strong community. You’ll be surprised how fast you improve.
-          </p>
-
-          <div class="pillrow">
-            <span class="pill">Choreography-based</span>
-            <span class="pill">Coordination + agility</span>
-            <span class="pill">Musicality</span>
-            <span class="pill">Confidence</span>
-          </div>
-
-          <div class="ctas">
-            <a class="btn primary" href="#join">Reserve your spot</a>
-            <a class="btn" href="#pricing">See pricing</a>
-          </div>
-
-          <p class="fine">Bring water. Wear what you feel good in. Come as you are.</p>
-        </div>
-
-        <div class="card glow">
-          <div class="stack">
-            <div class="tag">What you’ll get</div>
-            <ul class="list">
-              <li class="li"><span class="check">✓</span><span><b>A structured class</b> with warm-up, technique, and a combo you actually learn.</span></li>
-              <li class="li"><span class="check">✓</span><span><b>Mental reset</b> through movement, music, and focus.</span></li>
-              <li class="li"><span class="check">✓</span><span><b>Progress</b> even if you haven’t danced in years.</span></li>
-              <li class="li"><span class="check">✓</span><span><b>Community</b> that feels safe and fun.</span></li>
-            </ul>
-
-            <div style="height:1px;background:rgba(255,255,255,.10);margin:6px 0;"></div>
-
-            <div class="price">
-              <div>
-                <div class="small">Most popular</div>
-                <div class="big">$75</div>
-                <div class="small">4-class month package</div>
-              </div>
-              <div style="text-align:right">
-                <div class="small">Drop-in</div>
-                <div class="big">$20</div>
-                <div class="small">single class</div>
-              </div>
-            </div>
-
-            <a class="btn primary" href="#join">Start this week</a>
-            <div class="note">Add your schedule and location details below when ready.</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="what" class="section">
-        <div class="grid3">
-          <div class="card">
-            <h2>Not “just a workout”</h2>
-            <p class="muted">This is dance with intention. You train coordination, rhythm, and body control while learning choreography.</p>
-          </div>
-          <div class="card">
-            <h2>For real life</h2>
-            <p class="muted">Busy week? Perfect. You show up, move, and leave reset. No performance pressure.</p>
-          </div>
-          <div class="card">
-            <h2>For every level</h2>
-            <p class="muted">Beginners are welcome. Options are given. Your job is consistency, not perfection.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="schedule" class="section">
-        <div class="two">
-          <div class="card">
-            <h2>Schedule</h2>
-            <p class="muted">Update these lines with your real schedule.</p>
-            <ul class="list">
-              <li class="li"><span class="check">✓</span><span><b>Weekly class:</b> Wednesdays • 7:30 PM</span></li>
-              <li class="li"><span class="check">✓</span><span><b>Location:</b> The Woodlands / Creekside</span></li>
-              <li class="li"><span class="li"><span class="check">✓</span><span><b>What to bring:</b> water, sneakers or dance shoes</span></li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h2>What a class looks like</h2>
-            <ul class="list">
-              <li class="li"><span class="check">✓</span><span>Warm-up and mobility</span></li>
-              <li class="li"><span class="check">✓</span><span>Technique focus (turns, grooves, transitions)</span></li>
-              <li class="li"><span class="check">✓</span><span>Choreography combo (repeat + refine)</span></li>
-              <li class="li"><span class="check">✓</span><span>Cool down and reset</span></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="pricing" class="section">
-        <div class="two">
-          <div class="card">
-            <h2>Pricing</h2>
-            <div class="stack">
-              <div class="price">
-                <div>
-                  <div class="small">Drop-in</div>
-                  <div class="big">$20</div>
-                  <div class="small">one class</div>
-                </div>
-                <a class="btn" href="#join">Book</a>
-              </div>
-
-              <div class="price">
-                <div>
-                  <div class="small">Monthly package</div>
-                  <div class="big">$75</div>
-                  <div class="small">4 classes</div>
-                </div>
-                <a class="btn primary" href="#join">Get package</a>
-              </div>
-
-              <p class="note">If you want, we can add Venmo/Zelle buttons later, or connect Stripe.</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <h2>Who it’s for</h2>
-            <ul class="list">
-              <li class="li"><span class="check">✓</span><span>You want a fun weekly reset that still challenges you.</span></li>
-              <li class="li"><span class="check">✓</span><span>You want to learn choreography and feel progress.</span></li>
-              <li class="li"><span class="check">✓</span><span>You want community without awkward vibes.</span></li>
-              <li class="li"><span class="check">✓</span><span>You’re a beginner or returning after a break.</span></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="join" class="section">
-        <div class="card">
-          <h2>Join the next class</h2>
-          <p class="muted">Fastest way to fill spots is a simple RSVP form. This can email you later if you want.</p>
-
-          <!-- Simple "mailto" form: no backend needed -->
-          <form action="mailto:hello@amandance.com" method="post" enctype="text/plain">
-            <div class="formrow">
-              <input class="input" type="text" name="Name" placeholder="Your name" required />
-              <input class="input" type="tel" name="Phone" placeholder="Phone number" required />
-            </div>
-            <div style="height:10px"></div>
-            <div class="formrow">
-              <input class="input" type="email" name="Email" placeholder="Email" required />
-              <select class="input" name="Plan">
-                <option value="Drop-in $20">Drop-in $20</option>
-                <option value="Monthly package $75 (4 classes)">Monthly package $75 (4 classes)</option>
-              </select>
-            </div>
-            <div style="height:10px"></div>
-            <textarea class="input" name="Message" rows="3" placeholder="Any notes? (first time, questions, etc.)"></textarea>
-            <div style="height:12px"></div>
-            <button class="btn primary" type="submit">Send RSVP</button>
-            <p class="note">This opens your email app to send the RSVP. Later we can upgrade to a real form.</p>
-          </form>
-        </div>
-      </section>
-
-      <section id="faq" class="section">
-        <h2>FAQ</h2>
-        <div class="faq">
-          <details>
-            <summary>Do I need dance experience?</summary>
-            <p class="muted">No. You’ll get options and coaching. Consistency beats experience.</p>
-          </details>
-          <details>
-            <summary>What should I wear?</summary>
-            <p class="muted">Anything you can move in. Leggings, a set, sneakers or dance shoes.</p>
-          </details>
-          <details>
-            <summary>Is it high intensity?</summary>
-            <p class="muted">It’s active, but controlled. The goal is progress and feeling good, not burnout.</p>
-          </details>
-          <details>
-            <summary>Can I try one class first?</summary>
-            <p class="muted">Yes. Drop-in is $20. If you love it, switch to the $75 monthly package.</p>
-          </details>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.10);padding-top:16px">
-          <div>© <span id="y"></span> Amanda Dance Project • The Woodlands, TX</div>
+      <section class="section hero">
+        <div class="container hero-grid">
           <div>
-            <a href="mailto:hello@amandance.com">hello@amandance.com</a>
+            <h1>Girl therapy, but make it choreography.</h1>
+            <p class="lead">Choreography-based dance class for women in The Woodlands + Creekside. Build coordination, agility, and musicality in a supportive room, with zero pressure and no experience needed.</p>
+            <div class="chip-row">
+              <span class="chip">No experience needed</span>
+              <span class="chip">Skill-building choreography</span>
+              <span class="chip">Women-centered community</span>
+            </div>
+            <p>
+              <a data-link="reserve" class="btn btn-primary" href="#">Reserve on WhatsApp</a>
+              <a data-link="text" class="btn btn-secondary" href="#">Text me</a>
+            </p>
+          </div>
+          <figure class="hero-media">
+            <!-- Hero media: using Mona.jpeg as requested. If file path changes, update src below. -->
+            <img src="assets/img/Mona.jpeg" alt="Amanda Dance Project class promo" onerror="this.src='Logo.jpeg'" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container three-col">
+          <article class="strip">“I came for one class and stayed for the confidence and community.”</article>
+          <article class="strip">“Clear instruction, amazing music, and choreography you actually learn.”</article>
+          <article class="strip">“My coordination improved fast and I finally feel musical when I dance.”</article>
+        </div>
+      </section>
+
+      <section class="section" id="what-it-is">
+        <div class="container">
+          <h2>What it is</h2>
+          <p class="subheading">A choreography learning space focused on growth, rhythm, and confidence.</p>
+          <div class="three-col">
+            <article class="card"><h3>Choreography-first classes</h3><p>Learn a full routine step by step so movement sticks.</p></article>
+            <article class="card"><h3>Technique + musicality</h3><p>Train timing, control, agility, and coordination in every class.</p></article>
+            <article class="card"><h3>Community, zero pressure</h3><p>No intimidation, no perfection—just progress and support.</p></article>
           </div>
         </div>
-      </footer>
-    </main>
-  </div>
+      </section>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
-</body>
+      <section class="section" id="pricing">
+        <div class="container">
+          <h2>Pricing</h2>
+          <div class="three-col">
+            <article class="card"><h3>Drop-in class</h3><p class="price">$20</p><p>Single class access.</p><a data-link="reserve" class="btn btn-primary" href="#">Reserve drop-in</a></article>
+            <article class="card"><h3>Monthly package</h3><p class="price">$75</p><p>4 classes/month for consistency.</p><a data-link="reserve" class="btn btn-primary" href="#">Reserve monthly</a></article>
+            <article class="panel"><h3>Pay options</h3><p><strong>Zelle:</strong> <span data-fill="zelle"></span></p><p><strong>Venmo:</strong> <a data-link="venmo" href="#"><span data-fill="venmo"></span></a></p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="schedule-location">
+        <div class="container three-col">
+          <article class="panel"><h2>Schedule</h2><p>Wednesday — 7:30 PM</p><p class="small">Edit this block as schedule changes.</p></article>
+          <article class="panel"><h2>The Woodlands, TX</h2><p>Primary location details here.</p></article>
+          <article class="panel"><h2>Creekside</h2><p>Cool Spot – Creekside (placeholder, edit as needed).</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <h2>FAQ</h2>
+          <div class="faq-list">
+            <article class="faq-item"><button class="faq-question" data-faq-toggle aria-expanded="false">Do I need dance experience?<span>+</span></button><div class="faq-answer" hidden>No. Classes are beginner-friendly and progressive.</div></article>
+            <article class="faq-item"><button class="faq-question" data-faq-toggle aria-expanded="false">What should I wear?<span>+</span></button><div class="faq-answer" hidden>Comfortable activewear and clean sneakers.</div></article>
+            <article class="faq-item"><button class="faq-question" data-faq-toggle aria-expanded="false">How long is class?<span>+</span></button><div class="faq-answer" hidden>Usually around 60 minutes including warm-up and choreography breakdown.</div></article>
+            <article class="faq-item"><button class="faq-question" data-faq-toggle aria-expanded="false">Is this dance fitness?<span>+</span></button><div class="faq-answer" hidden>No. This is choreography learning and skill-building.</div></article>
+            <article class="faq-item"><button class="faq-question" data-faq-toggle aria-expanded="false">Can I start with one class?<span>+</span></button><div class="faq-answer" hidden>Yes, drop in for $20 first.</div></article>
+            <article class="faq-item"><button class="faq-question" data-faq-toggle aria-expanded="false">How do I RSVP?<span>+</span></button><div class="faq-answer" hidden>Tap any Reserve button to message on WhatsApp.</div></article>
+            <article class="faq-item"><button class="faq-question" data-faq-toggle aria-expanded="false">What if I miss class in package?<span>+</span></button><div class="faq-answer" hidden>Text us and we’ll try to place you in another session.</div></article>
+            <article class="faq-item"><button class="faq-question" data-faq-toggle aria-expanded="false">How can I stay updated?<span>+</span></button><div class="faq-answer" hidden>Follow our Instagram for class drops, updates, and community content.</div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container panel instagram-banner">
+          <h2>Join the community on Instagram</h2>
+          <p>Follow @amandance.project to keep up with class updates, schedules, and new choreography drops.</p>
+          <p><a data-link="instagram" class="btn btn-primary" href="#">Follow on Instagram</a></p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container cta-banner">
+          <h2>Ready to dance with confidence?</h2>
+          <p>
+            <a data-link="reserve" class="btn btn-primary" href="#">Reserve on WhatsApp</a>
+            <a data-link="text" class="btn btn-secondary" href="#">Text me</a>
+            <a data-link="email" class="btn btn-secondary" href="#">Email us</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>Amanda Dance Project • The Woodlands + Creekside, TX • Text <span data-fill="phone"></span></p>
+        <p class="small">Explore: <a href="pages/pricing.html">Pricing</a> | <a href="pages/schedule.html">Schedule</a> | <a href="pages/contact.html">Contact</a></p>
+      </div>
+    </footer>
+    <script src="assets/js/main.js" defer></script>
+  </body>
 </html>
