@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amanda Dance</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px;">
+    <h1>Amanda Dance</h1>
+    <p>Website coming soon.</p>
+
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:hello@amandance.com">hello@amandance.com</a></p>
+  </body>
+</html>
