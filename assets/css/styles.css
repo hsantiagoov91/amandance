@@ -154,27 +154,6 @@ img { max-width: 100%; display: block; }
   max-height: 580px;
 }
 
-.insta-carousel {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(280px, 1fr);
-  gap: 0.9rem;
-  overflow-x: auto;
-  padding-bottom: 0.6rem;
-  scroll-snap-type: x mandatory;
-}
-
-.insta-carousel .instagram-media {
-  min-width: 280px !important;
-  max-width: 420px !important;
-  width: 100% !important;
-  margin: 0 !important;
-  scroll-snap-align: start;
-  border: 1px solid var(--line) !important;
-  border-radius: var(--radius) !important;
-  background: #fff;
-}
-
 .strip, .card, .panel, .faq-item, .cta-banner {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -218,10 +197,6 @@ img { max-width: 100%; display: block; }
   padding: 0 0.95rem 0.95rem;
 }
 
-.instagram-banner {
-  background: linear-gradient(95deg, #fff0f9, #ffe4f3);
-}
-
 .cta-banner {
   background: linear-gradient(95deg, #fff7fc, #ffeef8);
   text-align: center;
@@ -253,5 +228,4 @@ input, textarea {
   .hero-grid, .three-col { grid-template-columns: 1fr; }
   .nav-wrap { flex-direction: column; padding: 0.75rem 0; }
   .section { padding: 3rem 0; }
-  .insta-carousel { grid-auto-columns: 86%; }
 }
