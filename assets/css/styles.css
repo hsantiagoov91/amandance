@@ -218,6 +218,10 @@ img { max-width: 100%; display: block; }
   padding: 0 0.95rem 0.95rem;
 }
 
+.instagram-banner {
+  background: linear-gradient(95deg, #fff0f9, #ffe4f3);
+}
+
 .cta-banner {
   background: linear-gradient(95deg, #fff7fc, #ffeef8);
   text-align: center;
